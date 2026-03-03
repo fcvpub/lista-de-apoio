@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="pt">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gerador de Lista de Apoios</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body class="bg-light">
 
   <!-- Navbar -->
@@ -17,59 +19,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link active" target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSddyhM7WFswpelRzcdeizi5Ukt_MNbue6YH0JBHIv_hjcJqzA/viewform?usp=publish-editor">Contato</a></li>
+          <li class="nav-item"><a class="nav-link active" target="_blank"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSddyhM7WFswpelRzcdeizi5Ukt_MNbue6YH0JBHIv_hjcJqzA/viewform?usp=publish-editor">Contato</a>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
   <main class="container-fluid">
-    <!-- LISTA INICIAL -->
-    <div class="card shadow-sm mb-4">
-      <div class="card-header bg-primary text-white">
-        <h5 class="mb-0">Lista Inicial</h5>
-      </div>
-      <div class="card-body">
-        <div class="table-responsive">
-          <table id="tabela_nomes" class="table table-bordered align-middle mb-0">
-            <thead class="table-light">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Posso Área</th>
-                <th scope="col">Posso Painel</th>
-                <th scope="col">Impedido</th>
-                <th scope="col">Passou</th>
-                <th scope="col">Ações</th>
-                <th scope="col">Limpar</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr data-row-id="1" data-number="1">
-                <th scope="row">1</th>
-                <td><input type="text" class="form-control" placeholder="Nome"></td>
-                <td class="text-center">
-                  <input class="form-check-input" type="checkbox" name="posso_area_1" value="area">
-                </td>
-                <td class="text-center">
-                  <input class="form-check-input" type="checkbox" name="posso_painel_1" value="painel">
-                </td>
-                <td class="text-center">
-                  <input class="form-check-input" type="radio" name="status_1" value="impedido">
-                </td>
-                <td class="text-center">
-                  <input class="form-check-input" type="radio" name="status_1" value="passou">
-                </td>
-                <td class="text-center"></td>
-                <td class="text-center">
-                  <button type="button" class="btn btn-secondary btn-sm btn-limpar">Limpar</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
 
     <!-- APOIOS DISPONÍVEIS -->
     <div class="card shadow-sm mb-4">
@@ -81,7 +39,7 @@
           <table id="tabela_apoios" class="table table-bordered align-middle mb-0">
             <thead class="table-light">
               <tr>
-                <th scope="col">#</th>
+                <th scope="col" class="text-center">#</th>
                 <th scope="col">Dia</th>
                 <th scope="col">Grupo</th>
                 <th scope="col">Horário</th>
@@ -92,37 +50,38 @@
               </tr>
             </thead>
             <tbody>
+              <!-- Linha inicial vazia -->
               <tr data-row-id="1" data-number="1" data-usado="false">
-                <th scope="row">1</th>
+                <th scope="row" class="text-center">1</th>
                 <td><input type="text" class="form-control" placeholder="Dia"></td>
                 <td>
-                  <div class="form-check">
+                  <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="grupo_1" id="grupo_1_G1" value="G1">
                     <label class="form-check-label" for="grupo_1_G1">G1</label>
                   </div>
-                  <div class="form-check">
+                  <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="grupo_1" id="grupo_1_G2" value="G2">
                     <label class="form-check-label" for="grupo_1_G2">G2</label>
                   </div>
-                  <div class="form-check">
+                  <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="grupo_1" id="grupo_1_G3" value="G3">
                     <label class="form-check-label" for="grupo_1_G3">G3</label>
                   </div>
-                  <div class="form-check">
+                  <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="grupo_1" id="grupo_1_G4" value="G4">
                     <label class="form-check-label" for="grupo_1_G4">G4</label>
                   </div>
-                  <div class="form-check">
+                  <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="grupo_1" id="grupo_1_G5" value="G5">
                     <label class="form-check-label" for="grupo_1_G5">G5</label>
                   </div>
                 </td>
                 <td>
-                  <div class="form-check">
+                  <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="horario_1" id="horario_1_07x19" value="07x19">
                     <label class="form-check-label" for="horario_1_07x19">07x19</label>
                   </div>
-                  <div class="form-check">
+                  <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="horario_1" id="horario_1_19x07" value="19x07">
                     <label class="form-check-label" for="horario_1_19x07">19x07</label>
                   </div>
@@ -144,32 +103,70 @@
       </div>
     </div>
 
-    <!-- Botão GERAR NOVA LISTA -->
-    <div class="d-flex justify-content-end mb-4">
+    <!-- LISTA INICIAL (TABELA DE NOMES) COM BOTÃO PARA GERAR -->
+    <div class="card shadow-sm mb-4">
+      <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">Lista Inicial</h5>
+        <button id="gerarTabelaNomesBtn" type="button" class="btn btn-light btn-sm">Preencher Tabela Nomes</button>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table id="tabela_nomes" class="table table-bordered align-middle mb-0">
+            <thead class="table-light">
+              <tr>
+                <th scope="col" class="text-center">#</th>
+                <th scope="col">Nome</th>
+                <!-- Colunas dinâmicas serão inseridas aqui via JavaScript -->
+                <th scope="col" class="text-center">Impedido</th>
+                <th scope="col" class="text-center">Passou</th>
+                <th scope="col" class="text-center">Ações</th>
+                <th scope="col" class="text-center">Limpar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Totalmente vazio, linhas serão inseridas via JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botões de ação -->
+    <div class="d-flex justify-content-end mb-4 gap-2">
+      <button id="carregar_lista" type="button" class="btn btn-primary btn-lg">CARREGAR LISTA</button>
       <button id="gerar_nova_lista" type="button" class="btn btn-primary btn-lg">GERAR NOVA LISTA</button>
     </div>
   </main>
 
   <footer class="bg-light text-center text-muted py-3 mt-4">
     <div class="container-fluid">
-      <p class="mb-0">Desenvolvido por <a href="https://github.com/fcvpub" target="_blank" class="text-decoration-none">fcvpub</a> &copy; 2025</p>
+      <p class="mb-0">Desenvolvido por <a href="https://github.com/fcvpub" target="_blank"
+          class="text-decoration-none">fcvpub</a> &copy; 2025</p>
     </div>
   </footer>
 
-  <!-- Modal para exibir a lista atualizada -->
-  <div class="modal fade" id="modalListaAtualizada" tabindex="-1" aria-labelledby="modalListaAtualizadaLabel" aria-hidden="true">
+  <!-- Modal para exibir resultados -->
+  <div class="modal fade" id="resultadoModal" tabindex="-1" aria-labelledby="resultadoModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modalListaAtualizadaLabel">Lista Atualizada</h5>
+          <h5 class="modal-title" id="resultadoModalLabel">Lista atualizada em <span id="dataAtual"></span></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <pre><code id="listaCode" class="language-plaintext" style="white-space: pre-wrap; word-wrap: break-word;"></code></pre>
+          <h6>Lista final:</h6>
+          <pre id="listaFinalTexto" style="white-space: pre-wrap; word-wrap: break-word;"></pre>
+          <hr>
+          <h6>Sobras:</h6>
+          <pre id="sobrasTexto" style="white-space: pre-wrap; word-wrap: break-word;"></pre>
+          <hr>
+          <h6>Lista anterior:</h6>
+          <pre id="listaAnteriorTexto" style="white-space: pre-wrap; word-wrap: break-word;"></pre>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" id="btnCopiarLista">Copiar</button>
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-secondary" id="copiarModalBtn">Copiar</button>
+          <button type="button" class="btn btn-primary" id="salvarModalBtn">Salvar</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
         </div>
       </div>
     </div>
@@ -177,166 +174,440 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
+  <!-- ---------- SCRIPT ÚNICO ---------- -->
   <script>
-    (function() {
-      // ---------- FUNÇÃO PARA LIMPAR UMA LINHA ----------
+    (function () {
+      // ---------- FUNÇÕES COMUNS ----------
       function limparLinha(linha) {
         linha.querySelectorAll('input[type="text"]').forEach(input => input.value = '');
         linha.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
         linha.querySelectorAll('input[type="radio"]').forEach(radio => radio.checked = false);
       }
 
-      // ---------- FUNÇÃO AUXILIAR PARA ATUALIZAR BOTÕES (APENAS A COLUNA DE AÇÕES) ----------
-      function atualizarBotoes(tbody) {
+      function reordenarNumeros(tbody) {
         const linhas = Array.from(tbody.querySelectorAll('tr'));
         linhas.forEach((linha, index) => {
-          const celulaAcoes = linha.querySelector('td:nth-last-child(2)');
-          if (!celulaAcoes) return;
-          celulaAcoes.innerHTML = '';
-          const isUltima = (index === linhas.length - 1);
-          if (isUltima) {
-            const btnPlus = document.createElement('button');
-            btnPlus.type = 'button';
-            btnPlus.className = 'btn btn-primary btn-sm btn-plus';
-            btnPlus.textContent = '+';
-            celulaAcoes.appendChild(btnPlus);
-          } else {
-            const btnMinus = document.createElement('button');
-            btnMinus.type = 'button';
-            btnMinus.className = 'btn btn-danger btn-sm btn-minus';
-            btnMinus.textContent = '-';
-            celulaAcoes.appendChild(btnMinus);
-          }
+          const numero = index + 1;
+          linha.dataset.number = numero;
+          const th = linha.querySelector('th[scope="row"]');
+          if (th) th.textContent = numero;
         });
       }
 
-      // ---------- TABELA NOMES ----------
-      (function() {
-        const tbody = document.querySelector('#tabela_nomes tbody');
-        let uniqueId = 2;
-
-        tbody.addEventListener('click', (e) => {
-          const target = e.target;
-          if (target.classList.contains('btn-plus')) {
-            const linhaOrig = target.closest('tr');
-            if (!linhaOrig) return;
-
-            const todas = [...tbody.querySelectorAll('tr')];
-            const maxNum = todas.reduce((max, linha) => {
-              const num = parseInt(linha.dataset.number) || 0;
-              return num > max ? num : max;
-            }, 0);
-            const proxNum = maxNum + 1;
-            const novoId = uniqueId++;
-
-            const novaLinha = document.createElement('tr');
-            novaLinha.dataset.rowId = novoId;
-            novaLinha.dataset.number = proxNum;
-
-            // Coluna #
-            const th = document.createElement('th');
-            th.scope = 'row';
-            th.textContent = proxNum;
-            novaLinha.appendChild(th);
-
-            // Nome
-            const tdNome = document.createElement('td');
-            const inputNome = document.createElement('input');
-            inputNome.type = 'text';
-            inputNome.className = 'form-control';
-            inputNome.value = linhaOrig.querySelector('td:nth-child(2) input')?.value || '';
-            tdNome.appendChild(inputNome);
-            novaLinha.appendChild(tdNome);
-
-            // Posso Área
-            const tdArea = document.createElement('td');
-            tdArea.className = 'text-center';
-            const cbArea = document.createElement('input');
-            cbArea.type = 'checkbox';
-            cbArea.className = 'form-check-input';
-            cbArea.name = `posso_area_${novoId}`;
-            cbArea.value = 'area';
-            tdArea.appendChild(cbArea);
-            novaLinha.appendChild(tdArea);
-
-            // Posso Painel
-            const tdPainel = document.createElement('td');
-            tdPainel.className = 'text-center';
-            const cbPainel = document.createElement('input');
-            cbPainel.type = 'checkbox';
-            cbPainel.className = 'form-check-input';
-            cbPainel.name = `posso_painel_${novoId}`;
-            cbPainel.value = 'painel';
-            tdPainel.appendChild(cbPainel);
-            novaLinha.appendChild(tdPainel);
-
-            // Impedido
-            const tdImpedido = document.createElement('td');
-            tdImpedido.className = 'text-center';
-            const radioImp = document.createElement('input');
-            radioImp.type = 'radio';
-            radioImp.className = 'form-check-input';
-            radioImp.name = `status_${novoId}`;
-            radioImp.value = 'impedido';
-            tdImpedido.appendChild(radioImp);
-            novaLinha.appendChild(tdImpedido);
-
-            // Passou
-            const tdPassou = document.createElement('td');
-            tdPassou.className = 'text-center';
-            const radioPass = document.createElement('input');
-            radioPass.type = 'radio';
-            radioPass.className = 'form-check-input';
-            radioPass.name = `status_${novoId}`;
-            radioPass.value = 'passou';
-            tdPassou.appendChild(radioPass);
-            novaLinha.appendChild(tdPassou);
-
-            // Coluna de ações (penúltima)
-            const tdAcoes = document.createElement('td');
-            tdAcoes.className = 'text-center';
-            novaLinha.appendChild(tdAcoes);
-
-            // Coluna de limpar (última)
-            const tdLimpar = document.createElement('td');
-            tdLimpar.className = 'text-center';
-            const btnLimpar = document.createElement('button');
-            btnLimpar.type = 'button';
-            btnLimpar.className = 'btn btn-secondary btn-sm btn-limpar';
-            btnLimpar.textContent = 'Limpar';
-            tdLimpar.appendChild(btnLimpar);
-            novaLinha.appendChild(tdLimpar);
-
-            tbody.appendChild(novaLinha);
-            atualizarBotoes(tbody);
-          }
-          else if (target.classList.contains('btn-minus')) {
-            const linha = target.closest('tr');
-            if (linha) {
-              const tbody = linha.closest('tbody');
-              linha.remove();
-              atualizarBotoes(tbody);
-            }
-          }
-          else if (target.classList.contains('btn-limpar')) {
-            const linha = target.closest('tr');
-            if (linha) limparLinha(linha);
-          }
-        });
-
-        atualizarBotoes(tbody);
-      })();
-
       // ---------- TABELA APOIOS ----------
-      (function() {
+      (function () {
         const tbody = document.querySelector('#tabela_apoios tbody');
-        let uniqueId = 2;
+        let uniqueId = 2; // já existe linha com ID 1
 
-        document.querySelector('#tabela_apoios tbody tr').dataset.usado = 'false';
+        function atualizarBotoesApoios() {
+          const linhas = Array.from(tbody.querySelectorAll('tr'));
+          linhas.forEach((linha, index) => {
+            const celulaAcoes = linha.querySelector('td:nth-last-child(2)');
+            if (!celulaAcoes) return;
+            celulaAcoes.innerHTML = '';
+            const isUltima = (index === linhas.length - 1);
+            if (isUltima) {
+              const btnPlus = document.createElement('button');
+              btnPlus.type = 'button';
+              btnPlus.className = 'btn btn-primary btn-sm btn-plus';
+              btnPlus.textContent = '+';
+              celulaAcoes.appendChild(btnPlus);
+            } else {
+              const btnMinus = document.createElement('button');
+              btnMinus.type = 'button';
+              btnMinus.className = 'btn btn-danger btn-sm btn-minus';
+              btnMinus.textContent = '-';
+              celulaAcoes.appendChild(btnMinus);
+            }
+          });
+        }
+
+        function criarLinhaVaziaApoio(id, numero) {
+          const novaLinha = document.createElement('tr');
+          novaLinha.dataset.rowId = id;
+          novaLinha.dataset.number = numero;
+          novaLinha.dataset.usado = 'false';
+
+          const th = document.createElement('th');
+          th.scope = 'row';
+          th.className = 'text-center';
+          th.textContent = numero;
+          novaLinha.appendChild(th);
+
+          const tdDia = document.createElement('td');
+          const inputDia = document.createElement('input');
+          inputDia.type = 'text';
+          inputDia.className = 'form-control';
+          inputDia.placeholder = 'Dia';
+          tdDia.appendChild(inputDia);
+          novaLinha.appendChild(tdDia);
+
+          const tdGrupo = document.createElement('td');
+          const valoresGrupo = ['G1', 'G2', 'G3', 'G4', 'G5'];
+          valoresGrupo.forEach(g => {
+            const div = document.createElement('div');
+            div.className = 'form-check form-check-inline';
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.className = 'form-check-input';
+            radio.name = `grupo_${id}`;
+            radio.value = g;
+            radio.id = `grupo_${id}_${g}`;
+            const label = document.createElement('label');
+            label.className = 'form-check-label';
+            label.htmlFor = radio.id;
+            label.textContent = g;
+            div.appendChild(radio);
+            div.appendChild(label);
+            tdGrupo.appendChild(div);
+          });
+          novaLinha.appendChild(tdGrupo);
+
+          const tdHorario = document.createElement('td');
+          const horarios = ['07x19', '19x07'];
+          horarios.forEach(h => {
+            const div = document.createElement('div');
+            div.className = 'form-check form-check-inline';
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.className = 'form-check-input';
+            radio.name = `horario_${id}`;
+            radio.value = h;
+            radio.id = `horario_${id}_${h.replace('x', '')}`;
+            const label = document.createElement('label');
+            label.className = 'form-check-label';
+            label.htmlFor = radio.id;
+            label.textContent = h;
+            div.appendChild(radio);
+            div.appendChild(label);
+            tdHorario.appendChild(div);
+          });
+          novaLinha.appendChild(tdHorario);
+
+          const tdArea = document.createElement('td');
+          tdArea.className = 'text-center';
+          const cbArea = document.createElement('input');
+          cbArea.type = 'checkbox';
+          cbArea.className = 'form-check-input';
+          cbArea.name = `area_${id}`;
+          cbArea.value = 'area';
+          tdArea.appendChild(cbArea);
+          novaLinha.appendChild(tdArea);
+
+          const tdPainel = document.createElement('td');
+          tdPainel.className = 'text-center';
+          const cbPainel = document.createElement('input');
+          cbPainel.type = 'checkbox';
+          cbPainel.className = 'form-check-input';
+          cbPainel.name = `painel_${id}`;
+          cbPainel.value = 'painel';
+          tdPainel.appendChild(cbPainel);
+          novaLinha.appendChild(tdPainel);
+
+          const tdAcoes = document.createElement('td');
+          tdAcoes.className = 'text-center';
+          novaLinha.appendChild(tdAcoes);
+
+          const tdLimpar = document.createElement('td');
+          tdLimpar.className = 'text-center';
+          const btnLimpar = document.createElement('button');
+          btnLimpar.type = 'button';
+          btnLimpar.className = 'btn btn-secondary btn-sm btn-limpar';
+          btnLimpar.textContent = 'Limpar';
+          tdLimpar.appendChild(btnLimpar);
+          novaLinha.appendChild(tdLimpar);
+
+          return novaLinha;
+        }
+
+        // Inicializar dataset.usado na linha inicial
+        const linhaInicial = tbody.querySelector('tr');
+        if (linhaInicial) linhaInicial.dataset.usado = 'false';
 
         tbody.addEventListener('click', (e) => {
           const target = e.target;
-          if (target.classList.contains('btn-plus')) {
+
+          if (target.classList.contains('btn-limpar')) {
+            const linha = target.closest('tr');
+            if (linha) limparLinha(linha);
+          }
+          else if (target.classList.contains('btn-plus')) {
+            const linhaOrig = target.closest('tr');
+            if (!linhaOrig) return;
+
+            const totalLinhas = tbody.querySelectorAll('tr').length;
+            if (totalLinhas >= 6) {
+              alert('Máximo de 6 linhas atingido.');
+              return;
+            }
+
+            const todas = [...tbody.querySelectorAll('tr')];
+            const maxNum = todas.reduce((max, linha) => {
+              const num = parseInt(linha.dataset.number) || 0;
+              return num > max ? num : max;
+            }, 0);
+            const proxNum = maxNum + 1;
+            const novoId = uniqueId++;
+
+            const novaLinha = criarLinhaVaziaApoio(novoId, proxNum);
+            linhaOrig.insertAdjacentElement('afterend', novaLinha);
+
+            reordenarNumeros(tbody);
+            atualizarBotoesApoios();
+          }
+          else if (target.classList.contains('btn-minus')) {
+            const linha = target.closest('tr');
+            if (!linha) return;
+
+            const totalLinhas = tbody.querySelectorAll('tr').length;
+            if (totalLinhas === 1) {
+              const novoId = uniqueId++;
+              const novaLinha = criarLinhaVaziaApoio(novoId, 1);
+              linha.replaceWith(novaLinha);
+              reordenarNumeros(tbody);
+              atualizarBotoesApoios();
+            } else {
+              linha.remove();
+              reordenarNumeros(tbody);
+              atualizarBotoesApoios();
+            }
+          }
+        });
+
+        atualizarBotoesApoios();
+      })();
+
+      // ---------- TABELA NOMES ----------
+      (function () {
+        const tbody = document.querySelector('#tabela_nomes tbody');
+        let uniqueId = 1; // será incrementado ao adicionar linhas
+        let dadosApoiosAtuais = []; // armazena os dados dos apoios (dia, grupo, horário, area, painel)
+
+        function atualizarBotoesNomes() {
+          const linhas = Array.from(tbody.querySelectorAll('tr'));
+          linhas.forEach((linha, index) => {
+            const celulaAcoes = linha.querySelector('td:nth-last-child(2)');
+            if (!celulaAcoes) return;
+            celulaAcoes.innerHTML = '';
+            const isUltima = (index === linhas.length - 1);
+            if (isUltima) {
+              const btnPlus = document.createElement('button');
+              btnPlus.type = 'button';
+              btnPlus.className = 'btn btn-primary btn-sm btn-plus';
+              btnPlus.textContent = '+';
+              celulaAcoes.appendChild(btnPlus);
+            } else {
+              const btnMinus = document.createElement('button');
+              btnMinus.type = 'button';
+              btnMinus.className = 'btn btn-danger btn-sm btn-minus';
+              btnMinus.textContent = '-';
+              celulaAcoes.appendChild(btnMinus);
+            }
+          });
+        }
+
+        function criarLinhaNome(id, numero, dadosApoios) {
+          const tr = document.createElement('tr');
+          tr.dataset.rowId = id;
+          tr.dataset.number = numero;
+
+          const th = document.createElement('th');
+          th.scope = 'row';
+          th.className = 'text-center';
+          th.textContent = numero;
+          tr.appendChild(th);
+
+          const tdNome = document.createElement('td');
+          const inputNome = document.createElement('input');
+          inputNome.type = 'text';
+          inputNome.className = 'form-control';
+          inputNome.placeholder = 'Nome';
+          tdNome.appendChild(inputNome);
+          tr.appendChild(tdNome);
+
+          // Colunas dinâmicas para cada apoio
+          dadosApoios.forEach((apoio, idx) => {
+            const td = document.createElement('td');
+            td.className = 'text-center';
+            // Se tiver área, adiciona checkbox para área
+            if (apoio.area) {
+              const div = document.createElement('div');
+              div.className = 'form-check form-check-inline';
+              const cb = document.createElement('input');
+              cb.type = 'checkbox';
+              cb.className = 'form-check-input';
+              cb.name = `area_${id}_${idx + 1}`;
+              cb.value = 'area';
+              const label = document.createElement('label');
+              label.className = 'form-check-label';
+              label.textContent = 'Área';
+              div.appendChild(cb);
+              div.appendChild(label);
+              td.appendChild(div);
+            }
+            // Se tiver painel, adiciona checkbox para painel
+            if (apoio.painel) {
+              const div = document.createElement('div');
+              div.className = 'form-check form-check-inline';
+              const cb = document.createElement('input');
+              cb.type = 'checkbox';
+              cb.className = 'form-check-input';
+              cb.name = `painel_${id}_${idx + 1}`;
+              cb.value = 'painel';
+              const label = document.createElement('label');
+              label.className = 'form-check-label';
+              label.textContent = 'Painel';
+              div.appendChild(cb);
+              div.appendChild(label);
+              td.appendChild(div);
+            }
+            // Se não tiver nenhum, coloca um traço
+            if (!apoio.area && !apoio.painel) {
+              td.textContent = '-';
+            }
+            tr.appendChild(td);
+          });
+
+          const tdImpedido = document.createElement('td');
+          tdImpedido.className = 'text-center';
+          const radioImp = document.createElement('input');
+          radioImp.type = 'radio';
+          radioImp.className = 'form-check-input';
+          radioImp.name = `status_${id}`;
+          radioImp.value = 'impedido';
+          tdImpedido.appendChild(radioImp);
+          tr.appendChild(tdImpedido);
+
+          const tdPassou = document.createElement('td');
+          tdPassou.className = 'text-center';
+          const radioPass = document.createElement('input');
+          radioPass.type = 'radio';
+          radioPass.className = 'form-check-input';
+          radioPass.name = `status_${id}`;
+          radioPass.value = 'passou';
+          tdPassou.appendChild(radioPass);
+          tr.appendChild(tdPassou);
+
+          const tdAcoes = document.createElement('td');
+          tdAcoes.className = 'text-center';
+          tr.appendChild(tdAcoes);
+
+          const tdLimpar = document.createElement('td');
+          tdLimpar.className = 'text-center';
+          const btnLimpar = document.createElement('button');
+          btnLimpar.type = 'button';
+          btnLimpar.className = 'btn btn-secondary btn-sm btn-limpar';
+          btnLimpar.textContent = 'Limpar';
+          tdLimpar.appendChild(btnLimpar);
+          tr.appendChild(tdLimpar);
+
+          return tr;
+        }
+
+        // Botão "Preencher Tabela Nomes"
+        document.getElementById('gerarTabelaNomesBtn').addEventListener('click', function () {
+          const linhasApoio = document.querySelectorAll('#tabela_apoios tbody tr');
+          const numApoios = linhasApoio.length;
+
+          // Função auxiliar para extrair dados de uma linha de apoio
+          function getDadosApoio(linha) {
+            const diaInput = linha.querySelector('td:nth-child(2) input');
+            const dia = diaInput ? diaInput.value.trim() : '';
+
+            const grupoRadio = linha.querySelector('td:nth-child(3) input[type="radio"]:checked');
+            const grupo = grupoRadio ? grupoRadio.value : '';
+
+            const horarioRadio = linha.querySelector('td:nth-child(4) input[type="radio"]:checked');
+            const horario = horarioRadio ? horarioRadio.value : '';
+
+            const areaChecked = linha.querySelector('td:nth-child(5) input[type="checkbox"]')?.checked || false;
+            const painelChecked = linha.querySelector('td:nth-child(6) input[type="checkbox"]')?.checked || false;
+
+            return { dia, grupo, horario, area: areaChecked, painel: painelChecked };
+          }
+
+          // Coleta os dados de cada linha
+          dadosApoiosAtuais = [];
+          linhasApoio.forEach(linha => {
+            dadosApoiosAtuais.push(getDadosApoio(linha));
+          });
+
+          const tabelaNomes = document.getElementById('tabela_nomes');
+          const thead = tabelaNomes.querySelector('thead tr');
+          const tbodyNomes = tabelaNomes.querySelector('tbody');
+
+          // --- Reconstroi o cabeçalho completamente ---
+          thead.innerHTML = ''; // limpa tudo
+
+          // Coluna #
+          const th0 = document.createElement('th');
+          th0.scope = 'col';
+          th0.className = 'text-center';
+          th0.textContent = '#';
+          thead.appendChild(th0);
+
+          // Coluna Nome
+          const thNome = document.createElement('th');
+          thNome.scope = 'col';
+          thNome.textContent = 'Nome';
+          thead.appendChild(thNome);
+
+          // Colunas dinâmicas (uma para cada apoio)
+          dadosApoiosAtuais.forEach((dado, index) => {
+            const titulo = `Dia ${dado.dia || '?'} - ${dado.grupo || '?'} - ${dado.horario || '?'}`;
+            const th = document.createElement('th');
+            th.scope = 'col';
+            th.className = 'text-center'
+            th.textContent = titulo;
+            thead.appendChild(th);
+          });
+
+          // Coluna Impedido
+          const thImpedido = document.createElement('th');
+          thImpedido.scope = 'col';
+          thImpedido.className = 'text-center'
+          thImpedido.textContent = 'Impedido';
+          thead.appendChild(thImpedido);
+
+          // Coluna Passou
+          const thPassou = document.createElement('th');
+          thPassou.scope = 'col';
+          thPassou.className = 'text-center'
+          thPassou.textContent = 'Passou';
+          thead.appendChild(thPassou);
+
+          // Coluna Ações
+          const thAcoes = document.createElement('th');
+          thAcoes.scope = 'col';
+          thAcoes.className = 'text-center'
+          thAcoes.textContent = 'Ações';
+          thead.appendChild(thAcoes);
+
+          // Coluna Limpar
+          const thLimpar = document.createElement('th');
+          thLimpar.scope = 'col';
+          thLimpar.className = 'text-center'
+          thLimpar.textContent = 'Limpar';
+          thead.appendChild(thLimpar);
+
+          // --- Recria o corpo da tabela com uma linha inicial ---
+          tbodyNomes.innerHTML = '';
+          const novaLinha = criarLinhaNome(uniqueId++, 1, dadosApoiosAtuais);
+          tbodyNomes.appendChild(novaLinha);
+
+          // Atualiza os botões de ação (+ e -) na tabela de nomes
+          atualizarBotoesNomes();
+        });
+
+        // Eventos para botões +, - e limpar na tabela de nomes
+        tbody.addEventListener('click', (e) => {
+          const target = e.target;
+
+          if (target.classList.contains('btn-limpar')) {
+            const linha = target.closest('tr');
+            if (linha) limparLinha(linha);
+          }
+          else if (target.classList.contains('btn-plus')) {
             const linhaOrig = target.closest('tr');
             if (!linhaOrig) return;
 
@@ -348,266 +619,332 @@
             const proxNum = maxNum + 1;
             const novoId = uniqueId++;
 
-            const novaLinha = document.createElement('tr');
-            novaLinha.dataset.rowId = novoId;
-            novaLinha.dataset.number = proxNum;
-            novaLinha.dataset.usado = 'false';
+            // Usa os dados atuais dos apoios para criar a nova linha
+            if (dadosApoiosAtuais.length === 0) {
+              alert('Preencha a tabela de nomes primeiro.');
+              return;
+            }
 
-            // Coluna #
-            const th = document.createElement('th');
-            th.scope = 'row';
-            th.textContent = proxNum;
-            novaLinha.appendChild(th);
+            const novaLinha = criarLinhaNome(novoId, proxNum, dadosApoiosAtuais);
 
-            // Dia
-            const tdDia = document.createElement('td');
-            const inputDia = document.createElement('input');
-            inputDia.type = 'text';
-            inputDia.className = 'form-control';
-            inputDia.value = linhaOrig.querySelector('td:nth-child(2) input')?.value || '';
-            tdDia.appendChild(inputDia);
-            novaLinha.appendChild(tdDia);
-
-            // Grupo (5 rádios)
-            const tdGrupo = document.createElement('td');
-            const valoresGrupo = ['G1','G2','G3','G4','G5'];
-            valoresGrupo.forEach(g => {
-              const div = document.createElement('div');
-              div.className = 'form-check';
-              const radio = document.createElement('input');
-              radio.type = 'radio';
-              radio.className = 'form-check-input';
-              radio.name = `grupo_${novoId}`;
-              radio.value = g;
-              radio.id = `grupo_${novoId}_${g}`;
-              const label = document.createElement('label');
-              label.className = 'form-check-label';
-              label.htmlFor = radio.id;
-              label.textContent = g;
-              div.appendChild(radio);
-              div.appendChild(label);
-              tdGrupo.appendChild(div);
-            });
-            novaLinha.appendChild(tdGrupo);
-
-            // Horário (dois rádios)
-            const tdHorario = document.createElement('td');
-            const horarios = ['07x19','19x07'];
-            horarios.forEach(h => {
-              const div = document.createElement('div');
-              div.className = 'form-check';
-              const radio = document.createElement('input');
-              radio.type = 'radio';
-              radio.className = 'form-check-input';
-              radio.name = `horario_${novoId}`;
-              radio.value = h;
-              radio.id = `horario_${novoId}_${h.replace('x','')}`;
-              const label = document.createElement('label');
-              label.className = 'form-check-label';
-              label.htmlFor = radio.id;
-              label.textContent = h;
-              div.appendChild(radio);
-              div.appendChild(label);
-              tdHorario.appendChild(div);
-            });
-            novaLinha.appendChild(tdHorario);
-
-            // Área (checkbox)
-            const tdArea = document.createElement('td');
-            tdArea.className = 'text-center';
-            const cbArea = document.createElement('input');
-            cbArea.type = 'checkbox';
-            cbArea.className = 'form-check-input';
-            cbArea.name = `area_${novoId}`;
-            cbArea.value = 'area';
-            tdArea.appendChild(cbArea);
-            novaLinha.appendChild(tdArea);
-
-            // Painel (checkbox)
-            const tdPainel = document.createElement('td');
-            tdPainel.className = 'text-center';
-            const cbPainel = document.createElement('input');
-            cbPainel.type = 'checkbox';
-            cbPainel.className = 'form-check-input';
-            cbPainel.name = `painel_${novoId}`;
-            cbPainel.value = 'painel';
-            tdPainel.appendChild(cbPainel);
-            novaLinha.appendChild(tdPainel);
-
-            // Coluna de ações (penúltima)
-            const tdAcoes = document.createElement('td');
-            tdAcoes.className = 'text-center';
-            novaLinha.appendChild(tdAcoes);
-
-            // Coluna de limpar (última)
-            const tdLimpar = document.createElement('td');
-            tdLimpar.className = 'text-center';
-            const btnLimpar = document.createElement('button');
-            btnLimpar.type = 'button';
-            btnLimpar.className = 'btn btn-secondary btn-sm btn-limpar';
-            btnLimpar.textContent = 'Limpar';
-            tdLimpar.appendChild(btnLimpar);
-            novaLinha.appendChild(tdLimpar);
-
-            tbody.appendChild(novaLinha);
-            atualizarBotoes(tbody);
+            // Insere após a linha atual
+            linhaOrig.insertAdjacentElement('afterend', novaLinha);
+            reordenarNumeros(tbody);
+            atualizarBotoesNomes();
           }
           else if (target.classList.contains('btn-minus')) {
             const linha = target.closest('tr');
-            if (linha) {
-              const tbody = linha.closest('tbody');
+            if (!linha) return;
+
+            const totalLinhas = tbody.querySelectorAll('tr').length;
+            if (totalLinhas === 1) {
+              // Se for a única linha, não remove; apenas limpa
+              limparLinha(linha);
+            } else {
               linha.remove();
-              atualizarBotoes(tbody);
+              reordenarNumeros(tbody);
+              atualizarBotoesNomes();
             }
           }
-          else if (target.classList.contains('btn-limpar')) {
-            const linha = target.closest('tr');
-            if (linha) limparLinha(linha);
-          }
         });
 
-        atualizarBotoes(tbody);
+        // Inicialmente, a tabela de nomes está vazia.
       })();
 
-      // ---------- BOTÃO GERAR LISTA ATUALIZADA ----------
-      document.getElementById('gerar_nova_lista').addEventListener('click', function(e) {
-        e.preventDefault();
+      // ---------- BOTÕES "CARREGAR LISTA" E "GERAR NOVA LISTA" ----------
+      document.getElementById('carregar_lista').addEventListener('click', function () {
+        alert('Função "CARREGAR LISTA" ainda não implementada.');
+      });
 
-        // ---------- MATRIZ NOMES (apenas para console) ----------
-        const linhasNomes = document.querySelectorAll('#tabela_nomes tbody tr');
-        const matrizNomes = [];
-        linhasNomes.forEach(linha => {
-          const nome = linha.querySelector('td:nth-child(2) input')?.value || '';
-          const possoArea = linha.querySelector('td:nth-child(3) input[type="checkbox"]')?.checked || false;
-          const possoPainel = linha.querySelector('td:nth-child(4) input[type="checkbox"]')?.checked || false;
-          const impedido = linha.querySelector('td:nth-child(5) input[type="radio"]:checked')?.value === 'impedido';
-          const passou = linha.querySelector('td:nth-child(6) input[type="radio"]:checked')?.value === 'passou';
-          matrizNomes.push([nome, possoArea, possoPainel, impedido, passou]);
-        });
-        console.log('=== Matriz Nomes (Nome, Posso Área, Posso Painel, Impedido, Passou) ===');
-        console.log(matrizNomes);
+      document.getElementById('gerar_nova_lista').addEventListener('click', function () {
+        // ========== 1. CAPTURAR DADOS DA TABELA DE APOIOS ==========
+        const linhasApoio = document.querySelectorAll('#tabela_apoios tbody tr');
+        const dadosApoios = [];
 
-        // ---------- MATRIZ APOIOS (apenas para console) ----------
-        const linhasApoios = document.querySelectorAll('#tabela_apoios tbody tr');
-        const matrizApoios = [];
-        linhasApoios.forEach(linha => {
-          const dia = linha.querySelector('td:nth-child(2) input')?.value || '';
+        linhasApoio.forEach((linha, index) => {
+          const diaInput = linha.querySelector('td:nth-child(2) input');
+          const dia = diaInput ? diaInput.value.trim() : '';
+
           const grupoRadio = linha.querySelector('td:nth-child(3) input[type="radio"]:checked');
           const grupo = grupoRadio ? grupoRadio.value : '';
+
           const horarioRadio = linha.querySelector('td:nth-child(4) input[type="radio"]:checked');
           const horario = horarioRadio ? horarioRadio.value : '';
-          const area = linha.querySelector('td:nth-child(5) input[type="checkbox"]')?.checked || false;
-          const painel = linha.querySelector('td:nth-child(6) input[type="checkbox"]')?.checked || false;
-          const usado = linha.dataset.usado === 'true';
-          matrizApoios.push([dia, grupo, horario, area, painel, usado]);
-        });
-        console.log('=== Matriz Apoios (Dia, Grupo, Horário, Área, Painel, Usado) ===');
-        console.log(matrizApoios);
 
-        // ---------- LISTA ATUALIZADA (NOVA LÓGICA) ----------
-        // Reseta usado
-        linhasApoios.forEach(linha => linha.dataset.usado = 'false');
+          const areaChecked = linha.querySelector('td:nth-child(5) input[type="checkbox"]')?.checked || false;
+          const painelChecked = linha.querySelector('td:nth-child(6) input[type="checkbox"]')?.checked || false;
 
-        // Array de nomes com dados
-        const nomes = [];
-        linhasNomes.forEach(linha => {
-          const nome = linha.querySelector('td:nth-child(2) input')?.value || '(sem nome)';
-          const possoArea = linha.querySelector('td:nth-child(3) input[type="checkbox"]')?.checked || false;
-          const possoPainel = linha.querySelector('td:nth-child(4) input[type="checkbox"]')?.checked || false;
-          const impedido = linha.querySelector('td:nth-child(5) input[type="radio"]:checked')?.value === 'impedido';
-          const passou = linha.querySelector('td:nth-child(6) input[type="radio"]:checked')?.value === 'passou';
-          nomes.push({ nome, possoArea, possoPainel, impedido, passou });
+          dadosApoios.push({
+            id: index + 1,
+            dia: dia,
+            grupo: grupo,
+            horario: horario,
+            area: areaChecked,
+            painel: painelChecked,
+            usado: false
+          });
         });
 
-        const totalNomes = nomes.length;
-        // Lista com o dobro de posições, preenchida com traços
-        const lista = new Array(2 * totalNomes).fill('-');
-        // Preenche as primeiras posições com os nomes (apenas nome)
-        for (let i = 0; i < totalNomes; i++) {
-          lista[i] = nomes[i].nome;
+        console.log('=== Dados da Tabela de Apoios (iniciais) ===');
+        console.table(dadosApoios);
+
+        // ========== 2. CAPTURAR DADOS DA TABELA DE NOMES ==========
+        const thead = document.querySelector('#tabela_nomes thead tr');
+        const ths = Array.from(thead.children);
+
+        const nomeIndex = ths.findIndex(th => th.textContent.trim() === 'Nome');
+        const impedidoIndex = ths.findIndex(th => th.textContent.trim() === 'Impedido');
+
+        const titulosApoios = [];
+        for (let i = nomeIndex + 1; i < impedidoIndex; i++) {
+          titulosApoios.push(ths[i].textContent.trim());
         }
-        let fim = totalNomes; // primeira posição vaga (índice)
 
-        // Processa cada nome na ordem original
-        for (let i = 0; i < totalNomes; i++) {
-          const item = nomes[i];
-          if (item.impedido) {
-            lista[i] = `${item.nome} - Impedido`;
-          } else if (item.passou) {
-            lista[fim] = `${item.nome} - Passou`;
-            lista[i] = '-';
-            fim++;
-          } else if (item.possoArea || item.possoPainel) {
-            // Procura apoio compatível não usado
-            let apoioEncontrado = null;
-            for (let apoioLinha of linhasApoios) {
-              if (apoioLinha.dataset.usado === 'true') continue;
-              const apoioArea = apoioLinha.querySelector('td:nth-child(5) input[type="checkbox"]')?.checked || false;
-              const apoioPainel = apoioLinha.querySelector('td:nth-child(6) input[type="checkbox"]')?.checked || false;
-              if ((item.possoArea && apoioArea) || (item.possoPainel && apoioPainel)) {
-                apoioEncontrado = apoioLinha;
-                break;
+        const linhasNomes = document.querySelectorAll('#tabela_nomes tbody tr');
+        const dadosNomes = [];
+
+        linhasNomes.forEach(linha => {
+          const nomeInput = linha.querySelector('td:nth-child(2) input');
+          const nome = nomeInput ? nomeInput.value.trim() : '';
+
+          const radioImpedido = linha.querySelector('td:nth-last-child(4) input[type="radio"]:checked');
+          const radioPassou = linha.querySelector('td:nth-last-child(3) input[type="radio"]:checked');
+          let status = null;
+          if (radioImpedido) status = 'impedido';
+          else if (radioPassou) status = 'passou';
+
+          const apoios = {};
+          const celulas = linha.children;
+          for (let i = 0; i < titulosApoios.length; i++) {
+            const celula = celulas[2 + i];
+            if (!celula) continue;
+            const titulo = titulosApoios[i];
+            const areaCheckbox = celula.querySelector('input[type="checkbox"][value="area"]');
+            const painelCheckbox = celula.querySelector('input[type="checkbox"][value="painel"]');
+            apoios[titulo] = {
+              area: areaCheckbox ? areaCheckbox.checked : null,
+              painel: painelCheckbox ? painelCheckbox.checked : null
+            };
+          }
+
+          dadosNomes.push({ nome, status, apoios });
+        });
+
+        console.log('=== Dados da Tabela de Nomes ===');
+        console.log(dadosNomes);
+
+        // ========== 3. GERAR A LISTA ATUALIZADA ==========
+        const numNomes = dadosNomes.length;
+        const numApoios = dadosApoios.length;
+        const linhasLista = numNomes; // mesmo número de nomes
+        const colunasLista = 2 + numApoios; // [0] nome, [1] status, [2..] apoios
+
+        let listaAtualizada = [];
+        for (let i = 0; i < linhasLista; i++) {
+          const linha = new Array(colunasLista).fill(null);
+          linha[0] = dadosNomes[i].nome;
+          listaAtualizada.push(linha);
+        }
+
+        // ========== LISTA FINAL (será atualizada apenas nas alocações) ==========
+        let listaFinal = listaAtualizada.map(linha => [...linha]); // cópia inicial
+
+        // ========== 4. MAPAS AUXILIARES ==========
+        const dadosPorNome = {};
+        dadosNomes.forEach(d => { dadosPorNome[d.nome] = d; });
+
+        const diasAlocados = {};
+        dadosNomes.forEach(d => { diasAlocados[d.nome] = new Set(); });
+
+        // ========== 5. LOOP PRINCIPAL ==========
+        let alocouNaRodada;
+        do {
+          alocouNaRodada = false;
+          for (let i = 0; i < listaAtualizada.length; i++) {
+            const linha = listaAtualizada[i];
+            const nome = linha[0];
+            if (!nome) continue;
+
+            const dados = dadosPorNome[nome];
+            const statusAtual = linha[1];
+            const statusOriginal = dados.status;
+
+            // Se a linha já tem status na lista, só aplicamos movimento se for passou
+            if (statusAtual !== null) {
+              if (statusAtual === 'passou') {
+                // Move para o final (sem reset de contador)
+                const linhaMovida = listaAtualizada.splice(i, 1)[0];
+                listaAtualizada.push(linhaMovida);
+                console.log(`Passou: ${nome} movido para o final`);
+              }
+              // Se for impedido, não faz nada
+              continue;
+            }
+
+            // Status atual é null (ainda não processado)
+            if (statusOriginal === 'impedido') {
+              linha[1] = 'impedido';
+              console.log(`Impedido: ${nome}`);
+            } else if (statusOriginal === 'passou') {
+              linha[1] = 'passou';
+              const linhaMovida = listaAtualizada.splice(i, 1)[0];
+              listaAtualizada.push(linhaMovida);
+              i--;
+              console.log(`Passou (marcado e movido): ${nome}`);
+            } else {
+              // Interessado: tenta alocar apoio
+              let alocado = false;
+              for (let j = 2; j < colunasLista; j++) {
+                if (linha[j] !== null) continue;
+
+                const apoioIndex = j - 2;
+                const apoio = dadosApoios[apoioIndex];
+                if (apoio.usado) continue;
+
+                const titulo = titulosApoios[apoioIndex];
+                const pref = dados.apoios[titulo];
+                if (!pref) continue;
+
+                const compativel = (pref.area && apoio.area) || (pref.painel && apoio.painel);
+                if (!compativel) continue;
+
+                if (diasAlocados[nome].has(apoio.dia)) continue;
+
+                // Aloca
+                apoio.usado = true;
+                linha[j] = titulo;
+                diasAlocados[nome].add(apoio.dia);
+                alocado = true;
+                alocouNaRodada = true;
+                console.log(`Alocado: ${nome} -> ${titulo}`);
+
+                // Move a linha para o final
+                const linhaMovida = listaAtualizada.splice(i, 1)[0];
+                listaAtualizada.push(linhaMovida);
+                i--; // ajusta para processar a nova linha na mesma posição
+
+                // ========== ATUALIZA A LISTA FINAL ==========
+                listaFinal = listaAtualizada.map(linha => [...linha]);
+                break; // sai do loop de colunas
+              }
+              if (!alocado) {
+                console.log(`${nome} não alocou, permanece`);
               }
             }
-            if (apoioEncontrado) {
-              apoioEncontrado.dataset.usado = 'true';
-              const dia = apoioEncontrado.querySelector('td:nth-child(2) input')?.value || '';
-              const grupoRadio = apoioEncontrado.querySelector('td:nth-child(3) input[type="radio"]:checked');
-              const grupo = grupoRadio ? grupoRadio.value : '';
-              const horarioRadio = apoioEncontrado.querySelector('td:nth-child(4) input[type="radio"]:checked');
-              const horario = horarioRadio ? horarioRadio.value : '';
-              lista[fim] = `${item.nome} - ${dia} - ${grupo} - ${horario}`;
-              lista[i] = '-';
-              fim++;
-            } else {
-              // Não encontrou apoio: mantém apenas o nome na posição original
-              // (lista[i] já está com item.nome)
-            }
-          } else {
-            // Sem interesse e não impedido/passou: mantém apenas o nome
-            // (lista[i] já está com item.nome)
           }
+        } while (alocouNaRodada && dadosApoios.some(a => !a.usado));
+
+        // ========== 6. EXIBIR LISTA FINAL NO CONSOLE (já existia) ==========
+        const listaParaExibicao = listaFinal.map(linha => {
+          let obj = {};
+          obj['Nome'] = linha[0];
+          obj['Status'] = linha[1];
+          titulosApoios.forEach((titulo, idx) => {
+            obj[titulo] = linha[idx + 2];
+          });
+          return obj;
+        });
+
+        console.log('=== LISTA FINAL (após últimas alocações) ===');
+        console.table(listaParaExibicao);
+
+        // ========== 7. EXIBIR SOBRAS NO CONSOLE (já existia) ==========
+        const sobras = dadosApoios.filter(a => !a.usado);
+        if (sobras.length > 0) {
+          console.log('=== SOBRAS (apoios não utilizados) ===');
+          console.table(sobras);
+        } else {
+          console.log('=== Todos os apoios foram utilizados. ===');
         }
 
-        // Remove todos os traços
-        const listaFinal = lista.filter(item => item !== '-');
-
-        console.log('=== LISTA ATUALIZADA ===');
-        console.log(listaFinal);
-
-        // Formata a data atual como dd/mm
+        // ========== 8. PREPARAR DADOS PARA O MODAL ==========
+        // Data atual
         const hoje = new Date();
         const dia = String(hoje.getDate()).padStart(2, '0');
         const mes = String(hoje.getMonth() + 1).padStart(2, '0');
-        const dataFormatada = `${dia}/${mes}`;
+        const ano = hoje.getFullYear();
+        document.getElementById('dataAtual').textContent = `${dia}/${mes}/${ano}`;
 
-        // Atualiza o título do modal
-        document.getElementById('modalListaAtualizadaLabel').textContent = `Lista Atualizada em: ${dataFormatada}\n`;
+        // Lista final formatada
+        let listaFinalStr = '';
+        listaFinal.forEach(linha => {
+          const nome = linha[0];
+          const status = linha[1] ? ` (${linha[1]})` : '';
+          let apoiosStr = '';
+          for (let j = 2; j < linha.length; j++) {
+            if (linha[j] !== null) {
+              apoiosStr += (apoiosStr ? ', ' : '') + titulosApoios[j - 2];
+            }
+          }
+          listaFinalStr += `${nome}${status}` + (apoiosStr ? `: ${apoiosStr}` : '') + '\n';
+        });
+        document.getElementById('listaFinalTexto').textContent = listaFinalStr;
 
-        // Exibe no modal
-        const textoLista = listaFinal.join('\n');
-        document.getElementById('listaCode').textContent = textoLista;
-        const modal = new bootstrap.Modal(document.getElementById('modalListaAtualizada'));
+        // Sobras formatadas
+        let sobrasStr = '';
+        if (sobras.length === 0) {
+          sobrasStr = 'Nenhuma sobra.';
+        } else {
+          sobras.forEach(apoio => {
+            const tipos = [];
+            if (apoio.area) tipos.push('Área');
+            if (apoio.painel) tipos.push('Painel');
+            sobrasStr += `Dia ${apoio.dia} - ${apoio.grupo} - ${apoio.horario} (${tipos.join(' e ') || 'nenhum'})\n`;
+          });
+        }
+        document.getElementById('sobrasTexto').textContent = sobrasStr;
+
+        // Lista anterior (ordem original da tabela de nomes)
+        let listaAnteriorStr = '';
+        dadosNomes.forEach(item => {
+          let linha = item.nome;
+          if (item.status) {
+            linha += ` - ${item.status}`;
+          }
+          // Poderíamos também listar as preferências, mas o pedido é apenas "mesma ordem da tabela_nomes"
+          listaAnteriorStr += linha + '\n';
+        });
+        document.getElementById('listaAnteriorTexto').textContent = listaAnteriorStr;
+
+        // Abrir o modal
+        const modal = new bootstrap.Modal(document.getElementById('resultadoModal'));
         modal.show();
       });
+
     })();
   </script>
 
-  <!-- Script para o botão Copiar -->
+  <!-- Script para os botões do modal (copiar e salvar) -->
   <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('btnCopiarLista').addEventListener('click', function() {
-      const titulo = document.getElementById('modalListaAtualizadaLabel').textContent;
-      const lista = document.getElementById('listaCode').textContent;
-      const textoCompleto = titulo + '\n' + lista;
+    document.getElementById('copiarModalBtn').addEventListener('click', function () {
+      const titulo = document.getElementById('resultadoModalLabel').innerText;
+      const listaFinal = document.getElementById('listaFinalTexto').innerText;
+      const sobras = document.getElementById('sobrasTexto').innerText;
+      const listaAnterior = document.getElementById('listaAnteriorTexto').innerText;
+      const textoCompleto = `${titulo}\n\nLista final:\n${listaFinal}\n\nSobras:\n${sobras}\n\nLista anterior:\n${listaAnterior}`;
       navigator.clipboard.writeText(textoCompleto).then(() => {
-        alert('Lista copiada para a área de transferência!');
+        alert('Conteúdo copiado para a área de transferência!');
       }).catch(err => {
         console.error('Erro ao copiar: ', err);
       });
     });
-  });
-</script>
 
+    document.getElementById('salvarModalBtn').addEventListener('click', function () {
+      const titulo = document.getElementById('resultadoModalLabel').innerText;
+      const listaFinal = document.getElementById('listaFinalTexto').innerText;
+      const sobras = document.getElementById('sobrasTexto').innerText;
+      const listaAnterior = document.getElementById('listaAnteriorTexto').innerText;
+      const textoCompleto = `${titulo}\n\nLista final:\n${listaFinal}\n\nSobras:\n${sobras}\n\nLista anterior:\n${listaAnterior}`;
+      const blob = new Blob([textoCompleto], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `lista_atualizada_${new Date().toISOString().slice(0,10)}.txt`;
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+  </script>
+  <!-- ---------- FIM DO SCRIPT ---------- -->
 </body>
+
 </html>
