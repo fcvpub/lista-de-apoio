@@ -43,8 +43,19 @@
                 <th scope="col">Dia</th>
                 <th scope="col">Grupo</th>
                 <th scope="col">Horário</th>
-                <th scope="col">Área</th>
-                <th scope="col">Painel</th>
+                <th scope="col" class="text-center"> Area <br><br>                  
+                  <div class="form-check form-switch form-check-reverse text-center">                    
+                    <label class="form-check-label" for="selecionarTodasArea">Selecionar/limpar todas Áreas</label><br>
+                    <input class="form-check-input" type="checkbox" id="selecionarTodasArea"><br>
+                  </div>
+                
+                </th>
+                <th scope="col" class="text-center">Painel <br><br>                  
+                  <div class="form-check form-switch form-check-reverse text-center">                      
+                      <label class="form-check-label" for="selecionarTodasPainel">Selecionar/limpar todas Painel</label><br>
+                      <input class="form-check-input" type="checkbox" id="selecionarTodasPainel"><br>
+                    </div>
+                </th>
                 <th scope="col">Ações</th>
                 <th scope="col">Limpar</th>
               </tr>
@@ -375,6 +386,54 @@
         });
 
         atualizarBotoesApoios();
+
+        // ===== Selecionar todas Área (toggle) com sincronização =====
+        const switchArea = document.getElementById('selecionarTodasArea');
+        const areaCheckboxes = () => document.querySelectorAll('#tabela_apoios tbody input[type="checkbox"][value="area"]');
+        
+        function atualizarSwitchArea() {
+          const checkboxes = areaCheckboxes();
+          const todosMarcados = checkboxes.length > 0 && Array.from(checkboxes).every(cb => cb.checked);
+          switchArea.checked = todosMarcados;
+        }
+
+        switchArea.addEventListener('change', function() {
+          const checkboxes = areaCheckboxes();
+          checkboxes.forEach(cb => cb.checked = this.checked);
+        });
+
+        // Observar mudanças nos checkboxes para atualizar o switch
+        document.addEventListener('change', function(e) {
+          if (e.target.matches('#tabela_apoios tbody input[type="checkbox"][value="area"]')) {
+            atualizarSwitchArea();
+          }
+        });
+
+        // Inicializar estado do switch
+        atualizarSwitchArea();
+
+        // ===== Selecionar todas Painel (toggle) com sincronização =====
+        const switchPainel = document.getElementById('selecionarTodasPainel');
+        const painelCheckboxes = () => document.querySelectorAll('#tabela_apoios tbody input[type="checkbox"][value="painel"]');
+        
+        function atualizarSwitchPainel() {
+          const checkboxes = painelCheckboxes();
+          const todosMarcados = checkboxes.length > 0 && Array.from(checkboxes).every(cb => cb.checked);
+          switchPainel.checked = todosMarcados;
+        }
+
+        switchPainel.addEventListener('change', function() {
+          const checkboxes = painelCheckboxes();
+          checkboxes.forEach(cb => cb.checked = this.checked);
+        });
+
+        document.addEventListener('change', function(e) {
+          if (e.target.matches('#tabela_apoios tbody input[type="checkbox"][value="painel"]')) {
+            atualizarSwitchPainel();
+          }
+        });
+
+        atualizarSwitchPainel();
       })();
 
       // ---------- TABELA NOMES ----------
@@ -494,14 +553,41 @@
 
           const tdLimpar = document.createElement('td');
           tdLimpar.className = 'text-center';
+          
+          // Botão Limpar
           const btnLimpar = document.createElement('button');
           btnLimpar.type = 'button';
           btnLimpar.className = 'btn btn-secondary btn-sm btn-limpar';
           btnLimpar.textContent = 'Limpar';
           tdLimpar.appendChild(btnLimpar);
+          
+          // Switch para marcar/desmarcar todos os checkboxes da linha
+          const switchDiv = document.createElement('div');
+          switchDiv.className = 'form-check form-switch form-check-reverse d-inline-block ms-1';
+          const switchInput = document.createElement('input');
+          switchInput.className = 'form-check-input';
+          switchInput.type = 'checkbox';
+          switchInput.id = `switchLinha_${id}`;
+          const switchLabel = document.createElement('label');
+          switchLabel.className = 'form-check-label';
+          switchLabel.htmlFor = switchInput.id;
+          switchLabel.textContent = 'Todos';
+          switchDiv.appendChild(switchInput);
+          switchDiv.appendChild(switchLabel);
+          tdLimpar.appendChild(switchDiv);
+          
           tr.appendChild(tdLimpar);
 
           return tr;
+        }
+
+        // Função para atualizar o estado do switch de uma linha
+        function atualizarSwitchLinha(linha) {
+          const switchInput = linha.querySelector('input[type="checkbox"][id^="switchLinha_"]');
+          if (!switchInput) return;
+          const checkboxes = linha.querySelectorAll('input[type="checkbox"]:not([id^="switchLinha_"])');
+          const todosMarcados = checkboxes.length > 0 && Array.from(checkboxes).every(cb => cb.checked);
+          switchInput.checked = todosMarcados;
         }
 
         // Botão "Preencher Tabela Nomes"
@@ -597,6 +683,9 @@
 
           // Atualiza os botões de ação (+ e -) na tabela de nomes
           atualizarBotoesNomes();
+
+          // Inicializa os switches das linhas
+          document.querySelectorAll('#tabela_nomes tbody tr').forEach(linha => atualizarSwitchLinha(linha));
         });
 
         // Eventos para botões +, - e limpar na tabela de nomes
@@ -605,7 +694,10 @@
 
           if (target.classList.contains('btn-limpar')) {
             const linha = target.closest('tr');
-            if (linha) limparLinha(linha);
+            if (linha) {
+              limparLinha(linha);
+              atualizarSwitchLinha(linha);
+            }
           }
           else if (target.classList.contains('btn-plus')) {
             const linhaOrig = target.closest('tr');
@@ -631,6 +723,7 @@
             linhaOrig.insertAdjacentElement('afterend', novaLinha);
             reordenarNumeros(tbody);
             atualizarBotoesNomes();
+            atualizarSwitchLinha(novaLinha);
           }
           else if (target.classList.contains('btn-minus')) {
             const linha = target.closest('tr');
@@ -640,11 +733,30 @@
             if (totalLinhas === 1) {
               // Se for a única linha, não remove; apenas limpa
               limparLinha(linha);
+              atualizarSwitchLinha(linha);
             } else {
               linha.remove();
               reordenarNumeros(tbody);
               atualizarBotoesNomes();
             }
+          }
+        });
+
+        // Evento change para os switches de linha
+        tbody.addEventListener('change', (e) => {
+          if (e.target.matches('input[type="checkbox"][id^="switchLinha_"]')) {
+            const linha = e.target.closest('tr');
+            if (!linha) return;
+            const checkboxes = linha.querySelectorAll('input[type="checkbox"]:not([id^="switchLinha_"])');
+            checkboxes.forEach(cb => cb.checked = e.target.checked);
+          }
+        });
+
+        // Observar mudanças nos checkboxes da linha para atualizar o switch correspondente
+        document.addEventListener('change', (e) => {
+          if (e.target.matches('#tabela_nomes tbody input[type="checkbox"]:not([id^="switchLinha_"])')) {
+            const linha = e.target.closest('tr');
+            if (linha) atualizarSwitchLinha(linha);
           }
         });
 
